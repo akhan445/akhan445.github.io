@@ -4,7 +4,7 @@ import { socialLinks } from "./config";
 export default function Page() {
   return (
     <section>
-      <a href={socialLinks.twitter} target="_blank">
+      <a href={socialLinks.github} target="_blank">
         <Image
           src="/profile.png"
           alt="Profile photo"
@@ -17,50 +17,23 @@ export default function Page() {
       </a>
 
       <h1 className="mb-8 text-2xl font-medium tracking-tight">
-        Portfolio, made simple!
+        Hi, I'm Abdullah. This website is currently a WIP ⚙️
       </h1>
 
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          A clean, fast, and lightweight portfolio template built with Next.js,
-          Vercel, and Tailwind CSS for optimal performance.
+          Hi, I’m a Full Stack and Backend Engineer with 1+ years of experience building robust and scalable software solutions.
+          I specialize in crafting efficient, clean systems using a range of technologies like React, Node.js, PostgreSQL, AWS, and JavaScript.
+          Whether it’s streamlining integrations for large enterprises or delivering end-to-end features for startups.
+          I’m all about creating impact with code.
         </p>
         <p>
-          Nextfolio includes all the essentials for a stunning portfolio: SEO,
-          MDX support, RSS, Atom, & JSON feeds, analytics, tweet & YouTube
-          embeds, KaTeX integration, and{" "}
-          <a
-            target="_blank"
-            href="https://github.com/1msirius/Nextfolio?tab=readme-ov-file#features"
-          >
-            more
-          </a>
-          .
+          I hold a Bachelor’s degree in Computer Science and a Full Stack Web Development Diploma, which have provided me with a strong foundation in software engineering principles.
+          Over the years, I’ve worked on everything from automating complex reports to integrating 100+ applications for a large bank—always pushing for smarter, faster, and more scalable solutions.
+          Recently, I’ve been exploring machine learning and AI, fascinated by how they can transform software development and solve real-world problems.
         </p>
         <p>
-          Nextfolio is{" "}
-          <a href={socialLinks.github} target="_blank">
-            open-source
-          </a>{" "}
-          and fully customizable, making it easy to add more features.
-        </p>
-        <p>
-          <a
-            href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F1msirius%2FNextfolio"
-            target="_blank"
-          >
-            Deploy
-          </a>{" "}
-          your Nextfolio site with Vercel in minutes and follow the set up
-          instructions in the{" "}
-          <a href="/blog/getting-started">Getting Started</a> post.
-        </p>
-        <p>
-          Built and maintained by{" "}
-          <a href="https://imsirius.xyz/" target="_blank">
-            Sirius
-          </a>
-          .
+          I’m passionate about learning, collaborating with great teams, and tackling challenges head-on.
         </p>
       </div>
     </section>
