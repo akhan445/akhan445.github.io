@@ -12,10 +12,13 @@ export async function generateStaticParams() {
 }
 
 export async function GET(
-  _: Request,
-  { params }: { params: { format: string } }
+  _: Request,  { params }: { params: Promise<{ format: string }> }
 ) {
-  const { format } = params;
+  const format = (await params).format
+
+//   { params }: { params: { Promise<{format: string }> }
+// ) {
+//   const format = (await params).format;
   const validFormats = ["rss.xml", "atom.xml", "feed.json"];
 
   if (!validFormats.includes(format)) {

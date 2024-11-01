@@ -17,19 +17,25 @@ export default function Page() {
       </a>
 
       <h1 className="mb-8 text-2xl font-medium tracking-tight">
-        Hi, I'm Abdullah. This website is currently a WIP ⚙️
+        Hi, I'm Abdullah.
       </h1>
 
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          Hi, I’m a Full Stack and Backend Engineer with 1+ years of experience building robust and scalable software solutions.
-          I specialize in crafting efficient, clean systems using a range of technologies like React, Node.js, PostgreSQL, AWS, and JavaScript.
-          Whether it’s streamlining integrations for large enterprises or delivering end-to-end features for startups.
-          I’m all about creating impact with code.
+          Hi, I’m a <b>Full Stack and Backend Engineer with <i>2+ years of experience</i></b> building robust and scalable software solutions.
         </p>
         <p>
-          I hold a Bachelor’s degree in Computer Science and a Full Stack Web Development Diploma, which have provided me with a strong foundation in software engineering principles.
-          Over the years, I’ve worked on everything from automating complex reports to integrating 100+ applications for a large bank—always pushing for smarter, faster, and more scalable solutions.
+          I specialize in crafting efficient, clean systems using a range of technologies like <mark>React</mark>, <mark>Node.js</mark>, PostgreSQL, AWS, and <mark>JavaScript</mark>.
+          I am also pretty handy with <mark>Java</mark> and <mark>Python</mark>.
+          No matter what I'm working on whether it's automation, applications or data analytics; I'm pushing for smarter, faster, and more scalable solutions.
+        </p>
+        <p>
+          I hold a <i>Bachelor’s degree in Computer Science</i> and a <i>Full Stack Web Development Diploma</i>, which have provided me with a strong foundation in software engineering principles.
+        </p>
+        <p>
+          Over the years, I’ve worked on <u>large enterprise</u> sfotware to delivering end-to-end features for <u>startups</u> and I’m all about creating impact with code.
+        </p>
+        <p>
           Recently, I’ve been exploring machine learning and AI, fascinated by how they can transform software development and solve real-world problems.
         </p>
         <p>
