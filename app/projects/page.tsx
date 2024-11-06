@@ -29,7 +29,7 @@ export default function Projects() {
                   {project.year}
                 </span>
               </div>
-              <p className="prose prose-neutral dark:prose-invert pt-3">
+              <p className="prose prose-neutral dark:prose-invert pt-3 max-w-[768px]">
                 {project.description}
               </p>
             </div>

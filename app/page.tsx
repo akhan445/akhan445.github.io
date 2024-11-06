@@ -8,10 +8,10 @@ export default function Page() {
         <Image
           src="/profile.png"
           alt="Profile photo"
-          className="rounded-full bg-gray-100 block lg:mt-5 mt-0 lg:mb-5 mb-10 mx-auto sm:float-right sm:ml-5 sm:mb-5 grayscale hover:grayscale-0"
+          className="rounded-full bg-gray-100 block lg:mt-5 mt-0 mx-auto sm:float-right sm:ml-5 grayscale hover:grayscale-0"
           unoptimized
-          width={160}
-          height={160}
+          width={180}
+          height={180}
           priority
         />
       </a>
@@ -20,7 +20,7 @@ export default function Page() {
         Hi, I'm Abdullah.
       </h1>
 
-      <div className="prose prose-neutral dark:prose-invert">
+      <div className="prose prose-neutral dark:prose-invert max-w-[768px]">
         <p>
           Hi, I’m a <b>Full Stack and Backend Engineer with <i>2+ years of experience</i></b> building robust and scalable software solutions.
         </p>
