@@ -25,6 +25,9 @@ export default function Projects() {
                 <span className="text-black dark:text-white font-medium tracking-tight">
                   {project.title}
                 </span>
+                <span className="text-black italic dark:text-white font-normal tracking-tight">
+                  {project.stack}
+                </span>
                 <span className="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
                   {project.year}
                 </span>
