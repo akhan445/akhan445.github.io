@@ -11,7 +11,7 @@ export default function Resume() {
     <section>
       <h1 className="mb-8 text-2xl font-medium tracking-tight">Resume</h1>
       {/* <div className="space-y-6"> */}
-        <iframe src="/AbdullahSKhan_2024_V2_Web.pdf#toolbar=0" width={"100%"} height="900px"/>
+        <iframe src="/AbdullahKhan_SE.pdf#toolbar=0" width={"100%"} height="900px"/>
       {/* </div> */}
     </section>
   );
