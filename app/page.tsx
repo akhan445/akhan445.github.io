@@ -22,9 +22,9 @@ export default function Page() {
 
       <div className="prose prose-neutral dark:prose-invert max-w-[768px]">
         <p>
-          I’m a <b>versatile Software Engineer</b>, <i>experienced in full stack and backend development</i> building robust, scalable and impactful software solutions.
+          I’m a <b>versatile Software Engineer</b>, <i>experienced in <b>full stack</b> and <b>backend</b> development</i> building robust, scalable and impactful software solutions.
         </p>
-        <p>I bring a strong foundation in software engineering and a solid understanding of business strategy and client needs, backed by a <i>Bachelor’s degree in Computer Science</i>, a <i>Bachelor’s degree in Business</i> and a <i>Full Stack Web Development Diploma.</i> My background combines technical depth with a solid understanding of business strategy and client needs.</p>
+        <p>I bring a strong foundation in software engineering and a solid understanding of business strategy and client needs, backed by a <i><u>Bachelor’s degree in Computer Science</u></i>, a <i><u>Bachelor’s degree in Business</u></i> and a <i><u>Full Stack Web Development Diploma.</u></i> My background combines technical depth with a solid understanding of business strategy and client needs.</p>
         <p>
           I’ve developed systems across the stack, from intuitive frontends to performant backends and cloud-native infrastructure; allowing me to bridge the gap between engineering, product, and business impact strengthened through hands-on development and consulting experience..
         </p>
