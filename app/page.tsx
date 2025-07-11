@@ -22,21 +22,27 @@ export default function Page() {
 
       <div className="prose prose-neutral dark:prose-invert max-w-[768px]">
         <p>
-          Hi, I’m a <b>Full Stack and Backend Engineer with <i>2+ years of experience</i></b> building robust and scalable software solutions.
+          I’m a <b>versatile Software Engineer</b>, <i>experienced in full stack and backend development</i> building robust, scalable and impactful software solutions.
+        </p>
+        <p>I bring a strong foundation in software engineering and a solid understanding of business strategy and client needs, backed by a <i>Bachelor’s degree in Computer Science</i>, a <i>Bachelor’s degree in Business</i> and a <i>Full Stack Web Development Diploma.</i> My background combines technical depth with a solid understanding of business strategy and client needs.</p>
+        <p>
+          I’ve developed systems across the stack, from intuitive frontends to performant backends and cloud-native infrastructure; allowing me to bridge the gap between engineering, product, and business impact strengthened through hands-on development and consulting experience..
         </p>
         <p>
-          I specialize in crafting efficient, clean systems using a range of technologies like <mark>React</mark>, <mark>Node.js</mark>, PostgreSQL, AWS, and <mark>JavaScript</mark>.
-          I am also pretty handy with <mark>Java</mark> and <mark>Python</mark>.
-          No matter what I'm working on whether it's automation, applications or data analytics; I'm pushing for smarter, faster, and more scalable solutions.
+          My toolkit includes technologies like <mark>React, Node.js, PostgreSQL, AWS, and JavaScript,</mark> and I’m equally comfortable working with <mark>Java and Python</mark>. Whether it’s automation, platform development, or data-driven applications, I aim to deliver clean, efficient, and forward-thinking solutions tailored to real-world needs.
         </p>
         <p>
-          I hold a <i>Bachelor’s degree in Computer Science</i> and a <i>Full Stack Web Development Diploma</i>, which have provided me with a strong foundation in software engineering principles.
+          Lately, I’ve been diving deeper into machine learning and AI, driven by their potential to transform how we build and interact with software.
         </p>
         <p>
-          Over the years, I’ve worked on <u>large enterprise</u> sfotware to delivering end-to-end features for <u>startups</u> and I’m all about creating impact with code.
-        </p>
-        <p>
-          Recently, I’ve been exploring machine learning and AI, fascinated by how they can transform software development and solve real-world problems.
+          <b>My current goals include:</b>
+          <ul>
+            <li>Building software products that solve real-world problems</li>
+            <li>Joining or collaborating with mission-driven teams</li>
+            <li>Deepening my expertise in AI and machine learning</li>
+            <li>Contributing to projects where thoughtful engineering meets real user impact</li>
+            <li>Growing as an engineer through continuous learning and mentorship</li>
+          </ul>
         </p>
         <p>
           I’m passionate about learning, collaborating with great teams, and tackling challenges head-on.
