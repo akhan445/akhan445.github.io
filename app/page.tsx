@@ -22,30 +22,17 @@ export default function Page() {
 
       <div className="prose prose-neutral dark:prose-invert max-w-[768px]">
         <p>
-          I’m a <b>versatile Software Engineer</b>, <i>experienced in <b>full stack</b> and <b>backend</b> development</i> building robust, scalable and impactful software solutions.
+          I'm a Software Engineer with 3+ years building <b>full-stack</b> applications and <b>backend</b> systems that deliver real business impact. Currently working in the AI/ML space, where I evaluate code quality and model outputs—giving me unique insights into building reliable AI-integrated features.
+        </p>
+        <p>
+          I've developed everything from Python automation tools, developed systems across the stack using Node & React, data-rich dashboards and more. My sweet spot is backend development with Python and Node.js.
+        </p>
+        <p>
+          Tech I work with: <mark>Python, Node.js, React, PostgreSQL, AWS/GCP, and increasingly, AI/ML integration patterns.</mark>
         </p>
         <p>I bring a strong foundation in software engineering and a solid understanding of business strategy and client needs, backed by a <i><u>Bachelor’s degree in Computer Science</u></i>, a <i><u>Bachelor’s degree in Business</u></i> and a <i><u>Full Stack Web Development Diploma.</u></i> My background combines technical depth with a solid understanding of business strategy and client needs.</p>
         <p>
-          I’ve developed systems across the stack, from intuitive frontends to performant backends and cloud-native infrastructure; allowing me to bridge the gap between engineering, product, and business impact strengthened through hands-on development and consulting experience..
-        </p>
-        <p>
-          My toolkit includes technologies like <mark>React, Node.js, PostgreSQL, AWS, and JavaScript,</mark> and I’m equally comfortable working with <mark>Java and Python</mark>. Whether it’s automation, platform development, or data-driven applications, I aim to deliver clean, efficient, and forward-thinking solutions tailored to real-world needs.
-        </p>
-        <p>
-          Lately, I’ve been diving deeper into machine learning and AI, driven by their potential to transform how we build and interact with software.
-        </p>
-        <p>
-          <b>My current goals include:</b>
-          <ul>
-            <li>Building software products that solve real-world problems</li>
-            <li>Joining or collaborating with mission-driven teams</li>
-            <li>Deepening my expertise in AI and machine learning</li>
-            <li>Contributing to projects where thoughtful engineering meets real user impact</li>
-            <li>Growing as an engineer through continuous learning and mentorship</li>
-          </ul>
-        </p>
-        <p>
-          I’m passionate about learning, collaborating with great teams, and tackling challenges head-on.
+          I love building practical solutions where I can integrate AI/ML into the app having a real world impact. I’m passionate about learning, collaborating with great teams, and tackling challenges head-on.
         </p>
       </div>
     </section>
