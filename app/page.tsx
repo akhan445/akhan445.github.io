@@ -22,7 +22,7 @@ export default function Page() {
 
       <div className="prose prose-neutral dark:prose-invert max-w-[768px]">
         <p>
-          I'm a Software Engineer with 3+ years building <b>full-stack</b> applications and <b>backend</b> systems that deliver real business impact. Currently working in the AI/ML space, where I evaluate code quality and model outputs—giving me unique insights into building reliable AI-integrated features.
+          I'm a Software Engineer with 2.5+ years building <b>full-stack</b> applications and <b>backend</b> systems that deliver real business impact. Currently working in the AI/ML space, where I evaluate code quality and model outputs—giving me unique insights into building reliable AI-integrated features.
         </p>
         <p>
           I've developed everything from Python automation tools, developed systems across the stack using Node & React, data-rich dashboards and more. My sweet spot is backend development with Python and Node.js.
