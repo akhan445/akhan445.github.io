@@ -22,17 +22,17 @@ export default function Page() {
 
       <div className="prose prose-neutral dark:prose-invert max-w-[768px]">
         <p>
-          I'm a Software Engineer with 2.5+ years building <b>full-stack</b> applications and <b>backend</b> systems that deliver real business impact. Currently working in the AI/ML space, where I evaluate code quality and model outputs—giving me unique insights into building reliable AI-integrated features.
+          I'm a <b>Full Stack Software Engineer</b> who builds applications. Comfortable with backend and frontend and love building real-world applications that deliver real business impact. I'm interested in working with cutting-edge technology and AI as leverage in modern applications.
         </p>
         <p>
-          I've developed everything from Python automation tools, developed systems across the stack using Node & React, data-rich dashboards and more. My sweet spot is backend development with Python and Node.js.
+          I've developed from Python automation tools to features part of large systems across the stack using Node, Express & React. My sweet spot is backend development with Python and Node.js.
         </p>
         <p>
-          Tech I work with: <mark>Python, Node.js, React, PostgreSQL, AWS/GCP, and increasingly, AI/ML integration patterns.</mark>
+          Tech I've worked with: <mark>Python, Node.js, Express, React, PostgreSQL, AWS/GCP.</mark>
         </p>
-        <p>I bring a strong foundation in software engineering and a solid understanding of business strategy and client needs, backed by a <i><u>Bachelor’s degree in Computer Science</u></i>, a <i><u>Bachelor’s degree in Business</u></i> and a <i><u>Full Stack Web Development Diploma.</u></i> My background combines technical depth with a solid understanding of business strategy and client needs.</p>
+        <p>I bring a strong foundation in software engineering and a solid understanding of business strategy and client needs, backed by a <i><u>Bachelor’s degree in Computer Science</u></i>, a <i><u>Bachelor’s degree in Business.</u></i> My background combines technical depth with a solid understanding of business strategy and client needs.</p>
         <p>
-          I love building practical solutions where I can integrate AI/ML into the app having a real world impact. I’m passionate about learning, collaborating with great teams, and tackling challenges head-on.
+          I love building practical solutions where I can integrate AI/ML into the app. I’m passionate about learning, collaborating with great teams, and tackling challenges head-on.
         </p>
       </div>
     </section>
