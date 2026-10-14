@@ -1,95 +1,52 @@
 import "./global.css";
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Navbar } from "./components/nav";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "./components/footer";
-import { ThemeProvider } from "./components/theme-switch";
-import { metaData } from "./config";
+import type { Metadata, Viewport } from "next";
+import { site } from "../content/site";
+import { DEFAULT_SCHEME, DEFAULT_THEME, SCHEMES } from "./lib/schemes";
+
+const FONTS =
+  "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(metaData.baseUrl),
-  title: {
-    default: metaData.title,
-    template: `%s | ${metaData.title}`,
-  },
-  description: metaData.description,
+  metadataBase: new URL(site.url),
+  title: `${site.name} · ${site.role}`,
+  description: site.pitch,
   openGraph: {
-    images: metaData.ogImage,
-    title: metaData.title,
-    description: metaData.description,
-    url: metaData.baseUrl,
-    siteName: metaData.name,
+    title: site.name,
+    description: site.pitch,
+    url: site.url,
+    siteName: site.name,
+    images: "/opengraph-image.png",
     locale: "en_US",
     type: "website",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  twitter: {
-    title: metaData.name,
-    card: "summary_large_image",
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  twitter: { card: "summary_large_image", title: site.name, description: site.pitch },
+  robots: { index: true, follow: true },
 };
 
-const cx = (...classes) => classes.filter(Boolean).join(" ");
+export const viewport: Viewport = {
+  themeColor: "#0a1420",
+  viewportFit: "cover",
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+// Runs before paint so a saved theme or scheme never flashes the default.
+const themeScript = `(function(){try{var d=document.documentElement,t=localStorage.getItem('theme'),s=localStorage.getItem('scheme');
+if(t==='light'||t==='dark')d.dataset.theme=t;if(${JSON.stringify(SCHEMES.map((s) => s.id))}.indexOf(s)>-1)d.dataset.scheme=s;}catch(e){}})();`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={cx(GeistSans.variable, GeistMono.variable)}>
+    <html
+      lang="en"
+      data-theme={DEFAULT_THEME}
+      data-scheme={DEFAULT_SCHEME}
+      suppressHydrationWarning
+    >
       <head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          href="/rss.xml"
-          title="RSS Feed"
-        />
-        <link
-          rel="alternate"
-          type="application/atom+xml"
-          href="/atom.xml"
-          title="Atom Feed"
-        />
-        <link
-          rel="alternate"
-          type="application/feed+json"
-          href="/feed.json"
-          title="JSON Feed"
-        />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="stylesheet" href={FONTS} />
       </head>
-      <body className="antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-20 lg:mb-40">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className="flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[768px] w-full">
-            <Navbar />
-            {children}
-            <Footer />
-            <Analytics />
-            <SpeedInsights />
-          </main>
-        </ThemeProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

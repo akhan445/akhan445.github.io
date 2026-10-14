@@ -1,40 +1,65 @@
-import Image from "next/image";
-import { socialLinks } from "./config";
+import { site } from "../content/site";
+import { AppBar } from "./components/app-bar";
+import { Spotlight } from "./components/spotlight";
+import { Experience } from "./components/experience";
+import { Projects } from "./components/projects";
+import { Contact } from "./components/contact";
+import { GitHubIcon, LinkedInIcon } from "./components/social-icons";
 
 export default function Page() {
+  const projects = [...site.projects].sort((a, b) => b.date.localeCompare(a.date));
   return (
-    <section>
-      <a href={socialLinks.github} target="_blank">
-        <Image
-          src="/profile.png"
-          alt="Profile photo"
-          className="rounded-full bg-gray-100 block lg:mt-5 mt-0 mx-auto sm:float-right sm:ml-5 grayscale hover:grayscale-0"
-          unoptimized
-          width={180}
-          height={180}
-          priority
-        />
-      </a>
+    <>
+      <Spotlight />
+      <div className="page">
+        <AppBar />
 
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">
-        Hi, I'm Abdullah.
-      </h1>
+        <section className="tile hero" id="top">
+          <div className="who">
+            <span className="logo big" role="img" aria-label="AK logo" />
+            <h1>{site.name}</h1>
+            <p className="role">{site.role}</p>
+            <p className="pitch">{site.pitch}</p>
+            <span className="status">
+              <span className="dot" />
+              {site.status}
+            </span>
+            <div className="socials">
+              <a className="ic" href={site.links.github} target="_blank" rel="noopener" aria-label="GitHub">
+                <GitHubIcon />
+              </a>
+              <a className="ic" href={site.links.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn">
+                <LinkedInIcon />
+              </a>
+              <a className="btn primary" href={site.resume} target="_blank" rel="noopener">
+                View résumé ↗
+              </a>
+            </div>
+          </div>
+          <div className="about">
+            <p className="tag">About</p>
+            {site.about.map((p, i) => (
+              <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+            ))}
+          </div>
+        </section>
 
-      <div className="prose prose-neutral dark:prose-invert max-w-[768px]">
-        <p>
-          I'm a <b>Full Stack Software Engineer</b> who builds applications. Comfortable with backend and frontend and love building real-world applications that deliver real business impact. I'm interested in working with cutting-edge technology and AI as leverage in modern applications.
-        </p>
-        <p>
-          I've developed from Python automation tools to features part of large systems across the stack using Node, Express & React. My sweet spot is backend development with Python and Node.js.
-        </p>
-        <p>
-          Tech I've worked with: <mark>Python, Node.js, Express, React, PostgreSQL, AWS/GCP.</mark>
-        </p>
-        <p>I bring a strong foundation in software engineering and a solid understanding of business strategy and client needs, backed by a <i><u>Bachelor’s degree in Computer Science</u></i>, a <i><u>Bachelor’s degree in Business.</u></i> My background combines technical depth with a solid understanding of business strategy and client needs.</p>
-        <p>
-          I love building practical solutions where I can integrate AI/ML into the app. I’m passionate about learning, collaborating with great teams, and tackling challenges head-on.
+        <section className="kstrip" aria-label="Highlights">
+          {site.highlights.map((k) => (
+            <div className="tile k" key={k.label}>
+              <strong>{k.value}</strong>
+              <span>{k.label}</span>
+            </div>
+          ))}
+        </section>
+
+        <Experience />
+        <Projects projects={projects} />
+        <Contact />
+        <p className="note">
+          © {new Date().getFullYear()} {site.name}. Press ⌘K or Ctrl+K to jump anywhere.
         </p>
       </div>
-    </section>
+    </>
   );
 }
