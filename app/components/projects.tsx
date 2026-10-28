@@ -74,7 +74,7 @@ export function Projects({ projects: all }: { projects: Project[] }) {
 
       <div className="cards">
         {shown.map((p) => (
-          <a className="card" key={p.title} href={p.url} target="_blank" rel="noopener">
+          <article className="card" key={p.title}>
             <div className="thumb">
               {p.image ? (
                 <img src={p.image} alt={`${p.title} screenshot`} loading="lazy" />
@@ -97,9 +97,10 @@ export function Projects({ projects: all }: { projects: Project[] }) {
             </div>
             <div className="cbody">
               <h3>
-                <span>
+                {/* Stretched over the whole card, so a click anywhere opens the code */}
+                <a className="stretch" href={p.url} target="_blank" rel="noopener">
                   {p.title} <span className="arrow">↗</span>
-                </span>
+                </a>
               </h3>
               <p>{p.description}</p>
               <div className="chips">
@@ -110,8 +111,18 @@ export function Projects({ projects: all }: { projects: Project[] }) {
                   </span>
                 ))}
               </div>
+              {p.demo && (
+                <div className="clinks">
+                  <a className="demo" href={p.demo} target="_blank" rel="noopener">
+                    {p.demoLabel ?? "Live demo"} <span className="arrow">↗</span>
+                  </a>
+                  <a href={p.url} target="_blank" rel="noopener">
+                    Code <span className="arrow">↗</span>
+                  </a>
+                </div>
+              )}
             </div>
-          </a>
+          </article>
         ))}
       </div>
       {shown.length === 0 && (

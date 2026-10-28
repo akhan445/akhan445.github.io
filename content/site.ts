@@ -28,7 +28,12 @@ export type Project = {
   date: string;
   description: string;
   stack: string[];
+  // Link to the source code.
   url: string;
+  // Optional link to a running version, shown as a "Live demo" button.
+  // `demoLabel` changes the button text, e.g. "Watch the demo" for a video.
+  demo?: string;
+  demoLabel?: string;
   // Optional screenshot in /public/projects, e.g. "/projects/scheduler.png".
   // Without one, a placeholder built from the first stack logo is shown.
   image?: string;
@@ -151,6 +156,8 @@ export const site = {
         "Agent skill pack that runs an AI coding agent through spec-driven development: scope, product spec and technical plan are approved before any code, then the build ships in small verified slices. Installs with npx and works in Claude Code, Codex and Cursor.",
       stack: ["Claude Code", "Agent skills", "Spec-driven dev"],
       url: "https://github.com/akhan445/scope-to-ship",
+      demo: "https://akhan445.github.io/four-seasons-of-canada/",
+      demoLabel: "See an app it built",
       image: "/projects/scope-to-ship.webp",
     },
     {
@@ -160,6 +167,7 @@ export const site = {
         "Interactive map of Canada that changes with each season, built end to end with the Scope to Ship agentic workflow. Every document the agent produced, from scope to build checklist, is in the repo.",
       stack: ["React", "TypeScript", "Vite", "Claude Code"],
       url: "https://github.com/akhan445/four-seasons-of-canada",
+      demo: "https://akhan445.github.io/four-seasons-of-canada/",
       image: "/projects/four-seasons-of-canada.webp",
     },
     {
