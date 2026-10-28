@@ -43,7 +43,7 @@ export const site = {
   status: "Open to new roles · Toronto",
   location: "Toronto",
   timeZone: "America/Toronto",
-  url: "https://abdullahkhan.io",
+  url: "https://akhan445.github.io",
   resume: "/AbdullahKhan_SE.pdf",
   email: "abdullahshamskhan@gmail.com",
   links: {
