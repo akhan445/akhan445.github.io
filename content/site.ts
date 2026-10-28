@@ -3,7 +3,8 @@
 //
 // Dates use "YYYY-MM". Experience shows them as "Nov 2025"; leave `end` out
 // for a current role and it shows "Present". Project dates are never shown;
-// they only sort the list newest first.
+// they only sort the list newest first ("YYYY-MM-DD" orders projects within a month).
+// Set `earlier: true` on a project to move it into the collapsed "Earlier work" list.
 //
 // Tech names (tags, stack, mainStack) pick up a logo automatically when they
 // match a key in app/lib/tech-icons.ts.
@@ -31,6 +32,7 @@ export type Project = {
   // Optional screenshot in /public/projects, e.g. "/projects/scheduler.png".
   // Without one, a placeholder built from the first stack logo is shown.
   image?: string;
+  earlier?: boolean;
 };
 
 export const site = {
@@ -143,11 +145,39 @@ export const site = {
 
   projects: [
     {
+      title: "Scope to Ship",
+      date: "2026-10-27",
+      description:
+        "Agent skill pack that runs an AI coding agent through spec-driven development: scope, product spec and technical plan are approved before any code, then the build ships in small verified slices. Installs with npx and works in Claude Code, Codex and Cursor.",
+      stack: ["Claude Code", "Agent skills", "Spec-driven dev"],
+      url: "https://github.com/akhan445/scope-to-ship",
+      image: "/projects/scope-to-ship.webp",
+    },
+    {
+      title: "Four Seasons of Canada",
+      date: "2026-10-26",
+      description:
+        "Interactive map of Canada that changes with each season, built end to end with the Scope to Ship agentic workflow. Every document the agent produced, from scope to build checklist, is in the repo.",
+      stack: ["React", "TypeScript", "Vite", "Claude Code"],
+      url: "https://github.com/akhan445/four-seasons-of-canada",
+      image: "/projects/four-seasons-of-canada.webp",
+    },
+    {
+      title: "Anchor, an Alexa+ routine coach",
+      date: "2026-10-23",
+      description:
+        "Voice coach that plans your day around fixed anchors and adapts your routines. A self-hosted MCP server whose 10 tools answer in under 30 ms, with Amazon Bedrock rewriting routines and coaching in the background and Amazon Polly as the voice.",
+      stack: ["Node.js", "MCP", "AWS", "Amazon Bedrock", "Amazon Polly"],
+      url: "https://github.com/akhan445/anchor-alexa-coach",
+      image: "/projects/anchor-alexa-coach.webp",
+    },
+    {
       title: "Loan Calculator",
       date: "2024-01",
       description: "Python app that calculates repayment schedules for annuity and differentiated loans.",
       stack: ["Python"],
       url: "https://github.com/akhan445/loan-calculator",
+      earlier: true,
     },
     {
       title: "Jungle",
@@ -155,6 +185,7 @@ export const site = {
       description: "E-commerce app with payment processing through the Stripe API.",
       stack: ["Rails", "PostgreSQL", "Stripe"],
       url: "https://github.com/akhan445/jungle-rails",
+      earlier: true,
     },
     {
       title: "Interview Scheduler",
@@ -163,6 +194,7 @@ export const site = {
         "React app for booking interviews with a custom scheduler, built test-first with Jest, Storybook and Cypress.",
       stack: ["React", "PostgreSQL", "Jest", "Storybook", "Cypress"],
       url: "https://github.com/akhan445/scheduler",
+      earlier: true,
     },
     {
       title: "Tweeter",
@@ -170,6 +202,7 @@ export const site = {
       description: "Single-page Twitter clone that posts and loads tweets over AJAX.",
       stack: ["JavaScript", "jQuery", "HTML", "CSS"],
       url: "https://github.com/akhan445/tweeter",
+      earlier: true,
     },
     {
       title: "TinyApp",
@@ -177,6 +210,7 @@ export const site = {
       description: "Full stack URL shortener in the style of bit.ly, with hashed passwords and cookie sessions.",
       stack: ["Node.js", "Express", "EJS", "JavaScript"],
       url: "https://github.com/akhan445/tinyapp",
+      earlier: true,
     },
     {
       title: "Secrets",
@@ -184,6 +218,7 @@ export const site = {
       description: "Full stack app with authentication where signed-in users share something personal.",
       stack: ["Node.js", "Express", "MongoDB", "Mongoose", "EJS"],
       url: "https://github.com/akhan445/Authentication-Secrets",
+      earlier: true,
     },
     {
       title: "Search Engine",
@@ -191,6 +226,7 @@ export const site = {
       description: "Java search engine that maps data with an inverted index and answers user queries.",
       stack: ["Java"],
       url: "https://github.com/akhan445/Search-Engine",
+      earlier: true,
     },
   ] as Project[],
 };

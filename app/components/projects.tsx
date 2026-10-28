@@ -4,7 +4,11 @@ import { useMemo, useState } from "react";
 import type { Project } from "../../content/site";
 import { TechIcon } from "./tech";
 
-export function Projects({ projects }: { projects: Project[] }) {
+export function Projects({ projects: all }: { projects: Project[] }) {
+  const projects = all.filter((p) => !p.earlier);
+  // The stack filter only earns its space once there are a handful of projects.
+  const showFilter = projects.length >= 5;
+  const earlier = all.filter((p) => p.earlier);
   const [selected, setSelected] = useState<string[]>([]);
   const [matchAll, setMatchAll] = useState(false);
 
@@ -33,38 +37,40 @@ export function Projects({ projects }: { projects: Project[] }) {
         </a>
       </div>
 
-      <div className="filter">
-        <div className="frow">
-          <p className="tag">Filter by stack</p>
-          <div className="frow" style={{ gap: 10 }}>
-            <span className="count" aria-live="polite">
-              Showing {shown.length} of {projects.length}
-            </span>
-            <div className="mode" role="group" aria-label="Match mode">
-              <button type="button" aria-pressed={!matchAll} onClick={() => setMatchAll(false)}>
-                Any
-              </button>
-              <button type="button" aria-pressed={matchAll} onClick={() => setMatchAll(true)}>
-                All
-              </button>
+      {showFilter && (
+        <div className="filter">
+          <div className="frow">
+            <p className="tag">Filter by stack</p>
+            <div className="frow" style={{ gap: 10 }}>
+              <span className="count" aria-live="polite">
+                Showing {shown.length} of {projects.length}
+              </span>
+              <div className="mode" role="group" aria-label="Match mode">
+                <button type="button" aria-pressed={!matchAll} onClick={() => setMatchAll(false)}>
+                  Any
+                </button>
+                <button type="button" aria-pressed={matchAll} onClick={() => setMatchAll(true)}>
+                  All
+                </button>
+              </div>
+              {selected.length > 0 && (
+                <button className="linkbtn" type="button" onClick={() => setSelected([])}>
+                  Clear
+                </button>
+              )}
             </div>
-            {selected.length > 0 && (
-              <button className="linkbtn" type="button" onClick={() => setSelected([])}>
-                Clear
+          </div>
+          <div className="fchips">
+            {allTech.map(({ t, n }) => (
+              <button key={t} type="button" className="fchip" aria-pressed={selected.includes(t)} onClick={() => toggle(t)}>
+                <TechIcon name={t} />
+                {t}
+                <small>{n}</small>
               </button>
-            )}
+            ))}
           </div>
         </div>
-        <div className="fchips">
-          {allTech.map(({ t, n }) => (
-            <button key={t} type="button" className="fchip" aria-pressed={selected.includes(t)} onClick={() => toggle(t)}>
-              <TechIcon name={t} />
-              {t}
-              <small>{n}</small>
-            </button>
-          ))}
-        </div>
-      </div>
+      )}
 
       <div className="cards">
         {shown.map((p) => (
@@ -112,6 +118,25 @@ export function Projects({ projects }: { projects: Project[] }) {
         <div className="empty">
           No project uses all of those together. Switch to <b>Any</b> or clear a tag.
         </div>
+      )}
+
+      {earlier.length > 0 && (
+        <details className="earlier">
+          <summary>
+            Earlier work <small>{earlier.length} bootcamp and school projects</small>
+          </summary>
+          <ul>
+            {earlier.map((p) => (
+              <li key={p.title}>
+                <a href={p.url} target="_blank" rel="noopener">
+                  {p.title} <span className="arrow">↗</span>
+                </a>
+                <p>{p.description}</p>
+                <small>{p.stack.join(" · ")}</small>
+              </li>
+            ))}
+          </ul>
+        </details>
       )}
     </section>
   );
