@@ -1,4 +1,4 @@
-# abdullahkhan.io
+# akhan445.github.io
 
 Personal portfolio of Abdullah Khan, built with Next.js 14 and statically exported to GitHub Pages.
 
