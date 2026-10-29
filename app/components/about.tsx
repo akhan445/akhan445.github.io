@@ -13,20 +13,20 @@ const marked = (p: string) =>
 
 const reduced = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Shows each comma-separated title in turn, sliding up and fading in, then calls onDone.
+// Slides the comma-separated titles up and fades them in together, then calls onDone.
 function Titles({ text, onDone }: { text: string; onDone: () => void }) {
   const titles = text.split(",").map((t) => t.trim());
 
   useEffect(() => {
-    const id = setTimeout(onDone, reduced() ? 0 : 400 + titles.length * 300 + 500);
+    const id = setTimeout(onDone, reduced() ? 0 : 400 + 500);
     return () => clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
 
   return (
-    <h2 className="subtitle">
+    <h2 className="subtitle title-in" style={{ animationDelay: "400ms" }}>
       {titles.map((t, i) => (
-        <span key={t} className="title-in" style={{ animationDelay: `${400 + i * 300}ms` }}>
+        <span key={t}>
           {i > 0 && <span className="sep" aria-hidden="true">·</span>}
           {t}
         </span>

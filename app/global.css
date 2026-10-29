@@ -94,7 +94,7 @@ h1 { font: 700 clamp(2.5rem, 5vw, 3.3rem)/1.04 var(--display); letter-spacing: -
 @media (max-width: 560px) { .builds { margin: 0 12px; padding: 4px 6px } }
 .builds p { margin: 0 }
 .builds ul { margin: 6px 0 0; padding-left: 20px; color: var(--muted); display: flex; flex-direction: column; gap: 4px }
-.title-in { display: inline-block; opacity: 0; animation: title-in .5s ease-out forwards }
+.title-in { opacity: 0; animation: title-in .5s ease-out forwards }
 .title-in .sep { color: var(--accent); margin: 0 .45em }
 @keyframes title-in { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: none } }
 /* Google Maps style "you are here" dot */
