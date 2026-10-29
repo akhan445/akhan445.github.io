@@ -38,9 +38,10 @@ export type Project = {
 export const site = {
   name: "Abdullah Khan",
   role: "Full Stack Software Engineer",
+  // Typed out one after another under the name in the hero.
+  titles: ["Full Stack Software Engineer", "AI App Builder", "Generalist"],
   pitch:
     "I build backend services and full stack products that ship to production, from fuel and logistics platforms to enterprise identity systems.",
-  status: "Open to new roles · Toronto",
   location: "Toronto",
   timeZone: "America/Toronto",
   url: "https://akhan445.github.io",
@@ -51,11 +52,12 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/abdullahskhan",
   },
 
-  // Paragraphs; <b>…</b> is allowed for emphasis.
+  // Paragraphs; <b>…</b> and links are allowed. Featured projects can be linked
+  // as #project-<title in kebab case>, e.g. #project-scope-to-ship.
   about: [
-    "I'm a full stack engineer whose sweet spot is the backend: <b>Python and Node.js services, APIs and integrations</b> that other systems depend on. I'm just as comfortable shipping the React and TypeScript side.",
-    "Most recently at <b>Nomad Fuel</b> I built features for a fuel and logistics platform that helps truckers buy fuel and save on it. Before that I built automation at <b>KPMG</b> that cut 2–3 days from security report turnaround, shipped production features for health tech and e-commerce teams, and evaluated AI-generated code at <b>Outlier AI</b>.",
-    "I'm most interested in automation, logistics and industrial software, where good backend systems save real time and money. A dual degree in Computer Science and Management means I care about why a feature exists, not only how it's built.",
+    "I'm a software engineer in Toronto with experience in <b>full stack and backend development</b>, <b>automation</b> and <b>AI</b>.",
+    "Full stack engineer, AI app builder and generalist. I mostly work in <b>Python, Node.js, TypeScript, React and PostgreSQL</b>, and pick up whatever else a problem needs.",
+    "Recently I built <a href=\"#project-scope-to-ship\">agent skills</a> that make coding agents plan before they write code, and an <a href=\"#project-anchor\">MCP server</a> that runs an Alexa+ routine coach.",
   ],
 
   // The KPI strip above Experience.
@@ -69,6 +71,8 @@ export const site = {
   experience: [
     {
       role: "Full Stack Software Engineer",
+  // Typed out one after another under the name in the hero.
+  titles: ["Full Stack Software Engineer", "AI App Builder", "Generalist"],
       company: "Nomad Fuel",
       start: "2025-11",
       end: "2025-12",
