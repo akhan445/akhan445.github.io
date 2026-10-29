@@ -10,4 +10,4 @@ export const SCHEMES = [
 
 export type SchemeId = (typeof SCHEMES)[number]["id"];
 export const DEFAULT_SCHEME: SchemeId = "lagoon";
-export const DEFAULT_THEME: "dark" | "light" = "dark";
+export const DEFAULT_THEME: "dark" | "light" = "light";

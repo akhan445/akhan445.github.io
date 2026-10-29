@@ -1,7 +1,7 @@
 /* Layout: Bento app bar and tile surfaces; hero, KPI strip, 70/30 experience with
    stack + education cards, single-column filterable project cards, contact row.
    Colors come from a scheme (data-scheme) x mode (data-theme) pair set on <html>.
-   Default: Lagoon, dark. */
+   Default: Lagoon, light. */
 :root {
   --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --body: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
@@ -37,7 +37,7 @@ img { max-width: 100% }
 body { background: var(--bg); color: var(--fg); font: 15px/1.65 var(--body); -webkit-font-smoothing: antialiased; transition: background .3s }
 a { color: inherit; text-decoration: none }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px }
-svg.i { width: 14px; height: 14px; fill: currentColor; flex: none }
+.i { width: 14px; height: 14px; flex: none }
 .spot { position: fixed; inset: 0; pointer-events: none; z-index: 0;
   background: radial-gradient(600px circle at var(--x, 20%) var(--y, 10%), var(--glow), transparent 70%) }
 .page { position: relative; padding-top: max(20px, env(safe-area-inset-top, 0px)); z-index: 1; max-width: 1080px; margin: 0 auto; padding-bottom: 48px;
@@ -121,11 +121,10 @@ h1 { font: 700 clamp(2.5rem, 5vw, 3.3rem)/1.04 var(--display); letter-spacing: -
 .frow { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap }
 .fchips { display: flex; flex-wrap: wrap; gap: 6px }
 .fchip { font: 500 12px/1 var(--mono); color: var(--fg); background: var(--tile); border: 1px solid var(--line); padding: 7px 10px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; transition: border-color .15s, background .15s, color .15s }
-.fchip svg.i { fill: var(--muted) }
 .fchip small { color: var(--muted); font-size: 11px }
 .fchip:hover { border-color: var(--muted) }
 .fchip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent) }
-.fchip[aria-pressed="true"] svg.i, .fchip[aria-pressed="true"] small { fill: var(--accent); color: var(--accent) }
+.fchip[aria-pressed="true"] small { color: var(--accent) }
 .mode { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--tile) }
 .mode button { font: 500 12px/1 var(--body); background: none; border: 0; color: var(--muted); padding: 7px 10px; cursor: pointer }
 .mode button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent) }
@@ -140,7 +139,7 @@ h1 { font: 700 clamp(2.5rem, 5vw, 3.3rem)/1.04 var(--display); letter-spacing: -
 .thumb .chrome { display: flex; gap: 5px; padding: 8px 10px; border-bottom: 1px solid var(--line) }
 .thumb .chrome i { width: 7px; height: 7px; border-radius: 50%; background: var(--line) }
 .thumb .glyph { position: absolute; inset: 26px 0 0; display: grid; place-items: center }
-.thumb .glyph svg { width: 54px; height: 54px; fill: var(--accent); opacity: .9 }
+.thumb .glyph svg, .thumb .glyph img { width: 54px; height: 54px; opacity: .9 }
 .thumb .lines { position: absolute; left: 12px; right: 40%; bottom: 12px; display: flex; flex-direction: column; gap: 5px }
 .thumb .lines i { height: 5px; border-radius: 3px; background: var(--line) } .thumb .lines i:last-child { width: 60% }
 .cbody { display: flex; flex-direction: column; gap: 6px; padding: 4px 6px 4px 0; min-width: 0 }
@@ -149,8 +148,7 @@ h1 { font: 700 clamp(2.5rem, 5vw, 3.3rem)/1.04 var(--display); letter-spacing: -
 .cbody p { margin: 0; color: var(--muted); font-size: 14.5px }
 .cbody .chips { margin-top: auto; padding-top: 8px }
 .cbody .chip { color: var(--fg); background: var(--tile-2); border: 1px solid var(--line); border-radius: 7px }
-.cbody .chip svg.i { fill: var(--muted) }
-.cbody .chip.hit { color: var(--accent); border-color: var(--accent); background: var(--accent-soft) } .cbody .chip.hit svg.i { fill: var(--accent) }
+.cbody .chip.hit { color: var(--accent); border-color: var(--accent); background: var(--accent-soft) }
 .earlier { border: 1px dashed var(--line); border-radius: 14px; background: var(--tile-2) }
 .earlier summary { cursor: pointer; padding: 14px 16px; font: 600 15px/1.3 var(--display); display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; list-style: none; white-space: nowrap }
 .earlier summary::-webkit-details-marker { display: none }
@@ -177,7 +175,7 @@ h1 { font: 700 clamp(2.5rem, 5vw, 3.3rem)/1.04 var(--display); letter-spacing: -
 .side .tile { padding: 22px; gap: 14px }
 .core { display: grid; grid-template-columns: 1fr 1fr; gap: 8px }
 .core div { display: flex; flex-direction: column; gap: 8px; padding: 14px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--tile-2) }
-.core svg { width: 26px; height: 26px; fill: var(--accent) }
+.core svg, .core img { width: 26px; height: 26px }
 .core b { font: 600 13.5px/1.25 var(--body) } .core small { color: var(--muted); font-size: 12px; line-height: 1.3 }
 .school { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px }
 .school b { font-weight: 600; font-size: 14.5px } .school span { color: var(--muted); font-size: 13px; grid-column: 1 } .school time { font: 12px var(--mono); color: var(--muted); grid-row: 1; grid-column: 2 }
