@@ -50,7 +50,7 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/abdullahskhan",
   },
 
-  // The About section. `subtitle` types itself out, pausing after each comma.
+  // The About section. `subtitle` fades in one comma-separated title at a time.
   // In `about` paragraphs, [[style: text]] draws a hand-drawn mark around the text,
   // one after another on page load. Styles: circle, highlight, underline, box.
   // Recent builds link to their project card (#project-<title in kebab case>) and

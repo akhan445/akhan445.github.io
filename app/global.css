@@ -94,8 +94,9 @@ h1 { font: 700 clamp(2.5rem, 5vw, 3.3rem)/1.04 var(--display); letter-spacing: -
 @media (max-width: 560px) { .builds { margin: 0 12px; padding: 4px 6px } }
 .builds p { margin: 0 }
 .builds ul { margin: 6px 0 0; padding-left: 20px; color: var(--muted); display: flex; flex-direction: column; gap: 4px }
-.caret { display: inline-block; width: 2px; height: 1.1em; margin-left: 2px; vertical-align: -.18em; background: var(--accent); animation: blink 1s steps(1) infinite }
-@keyframes blink { 50% { opacity: 0 } }
+.title-in { display: inline-block; opacity: 0; animation: title-in .5s ease-out forwards }
+.title-in .sep { color: var(--accent); margin: 0 .45em }
+@keyframes title-in { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: none } }
 /* Google Maps style "you are here" dot */
 .here { width: 11px; height: 11px; border-radius: 50%; background: #1a73e8; border: 2px solid #fff; box-shadow: 0 0 0 0 rgba(26,115,232,.35), 0 1px 2px rgba(0,0,0,.25); animation: here 2.4s ease-out infinite; flex: none }
 @keyframes here { 0% { box-shadow: 0 0 0 0 rgba(26,115,232,.4), 0 1px 2px rgba(0,0,0,.25) } 100% { box-shadow: 0 0 0 9px rgba(26,115,232,0), 0 1px 2px rgba(0,0,0,.25) } }
@@ -203,7 +204,7 @@ h1 { font: 700 clamp(2.5rem, 5vw, 3.3rem)/1.04 var(--display); letter-spacing: -
 .pbox li button span { font: 12px var(--mono); color: var(--muted) }
 .pbox li button.sel { background: var(--accent-soft) }
 .note { text-align: center; font-size: 13px; color: var(--muted); margin: 0 }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important } .caret, .here { animation: none } .spot { display: none } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important } .here { animation: none } .title-in { animation: none; opacity: 1 } .spot { display: none } }
 
 .thumb img { width: 100%; height: 100%; object-fit: cover; display: block }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }

@@ -13,44 +13,35 @@ const marked = (p: string) =>
 
 const reduced = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Types the subtitle once, pausing after each comma as if thinking, then calls onDone.
-function Typed({ text, onDone }: { text: string; onDone: () => void }) {
-  const [shown, setShown] = useState(text);
+// Shows each comma-separated title in turn, sliding up and fading in, then calls onDone.
+function Titles({ text, onDone }: { text: string; onDone: () => void }) {
+  const titles = text.split(",").map((t) => t.trim());
 
   useEffect(() => {
-    if (reduced()) return onDone();
-    let n = 0;
-    let id: ReturnType<typeof setTimeout>;
-    const step = () => {
-      n++;
-      setShown(text.slice(0, n));
-      if (n === text.length) return onDone();
-      id = setTimeout(step, text[n - 1] === "," ? 650 : 55);
-    };
-    setShown("");
-    id = setTimeout(step, 400);
+    const id = setTimeout(onDone, reduced() ? 0 : 400 + titles.length * 300 + 500);
     return () => clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
 
   return (
     <h2 className="subtitle">
-      <span className="sr-only">{text}</span>
-      <span aria-hidden="true">
-        {shown}
-        <span className="caret" />
-      </span>
+      {titles.map((t, i) => (
+        <span key={t} className="title-in" style={{ animationDelay: `${400 + i * 300}ms` }}>
+          {i > 0 && <span className="sep" aria-hidden="true">·</span>}
+          {t}
+        </span>
+      ))}
     </h2>
   );
 }
 
 export function About() {
   const ref = useRef<HTMLDivElement>(null);
-  const [typed, setTyped] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const root = ref.current;
-    if (!typed || !root) return;
+    if (!ready || !root) return;
     let shown: RoughAnnotation[] = [];
 
     // Draws every mark in page order. Colors follow the theme, so a theme
@@ -92,13 +83,13 @@ export function About() {
       mo.disconnect();
       shown.forEach((a) => a.remove());
     };
-  }, [typed]);
+  }, [ready]);
 
   const { subtitle, paragraphs, buildsIntro, builds } = site.about;
   return (
     <div className="about" ref={ref}>
       <p className="tag">About</p>
-      <Typed text={subtitle} onDone={() => setTyped(true)} />
+      <Titles text={subtitle} onDone={() => setReady(true)} />
       {paragraphs.map((p, i) => (
         <p key={i} dangerouslySetInnerHTML={{ __html: marked(p) }} />
       ))}
