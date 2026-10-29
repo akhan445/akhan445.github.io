@@ -40,7 +40,6 @@ export const site = {
   role: "Full Stack Software Engineer",
   pitch:
     "I build backend services and full stack products that ship to production, from fuel and logistics platforms to enterprise identity systems.",
-  status: "Open to new roles · Toronto",
   location: "Toronto",
   timeZone: "America/Toronto",
   url: "https://akhan445.github.io",
@@ -51,12 +50,23 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/abdullahskhan",
   },
 
-  // Paragraphs; <b>…</b> is allowed for emphasis.
-  about: [
-    "I'm a full stack engineer whose sweet spot is the backend: <b>Python and Node.js services, APIs and integrations</b> that other systems depend on. I'm just as comfortable shipping the React and TypeScript side.",
-    "Most recently at <b>Nomad Fuel</b> I built features for a fuel and logistics platform that helps truckers buy fuel and save on it. Before that I built automation at <b>KPMG</b> that cut 2–3 days from security report turnaround, shipped production features for health tech and e-commerce teams, and evaluated AI-generated code at <b>Outlier AI</b>.",
-    "I'm most interested in automation, logistics and industrial software, where good backend systems save real time and money. A dual degree in Computer Science and Management means I care about why a feature exists, not only how it's built.",
-  ],
+  // The About section. `subtitle` fades in, with a dot between its comma-separated titles.
+  // In `about` paragraphs, [[style: text]] draws a hand-drawn mark around the text,
+  // one after another on page load. Styles: circle, highlight, underline, box.
+  // Recent builds link to their project card (#project-<title in kebab case>) and
+  // get a bracket around them as the last mark.
+  about: {
+    subtitle: "Full Stack Engineer, AI App Builder, Generalist",
+    paragraphs: [
+      "I'm a [[circle: software engineer]] in Toronto with experience in [[highlight: full stack]] and [[highlight: backend]] development, [[highlight: automation]] and [[highlight: AI]].",
+      "I mostly work in [[underline: Python]], [[underline: Node.js]], [[underline: TypeScript]], [[underline: React]] and [[underline: PostgreSQL]], and pick up whatever else a problem needs.",
+    ],
+    buildsIntro: "Some recent builds:",
+    builds: [
+      { name: "Agent Skills", href: "#project-scope-to-ship", text: "that reduce cognitive debt through flipped interaction" },
+      { name: "MCP Server", href: "#project-anchor", text: "that houses an Alexa+ productivity coach built on AWS, Bedrock and Polly" },
+    ],
+  },
 
   // The KPI strip above Experience.
   highlights: [

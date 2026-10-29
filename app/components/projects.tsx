@@ -4,6 +4,10 @@ import { useMemo, useState } from "react";
 import type { Project } from "../../content/site";
 import { TechIcon } from "./tech";
 
+// Anchor for a featured project, e.g. "Scope to Ship" -> #project-scope-to-ship.
+export const projectId = (title: string) =>
+  "project-" + title.toLowerCase().split(",")[0].replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 export function Projects({ projects: all }: { projects: Project[] }) {
   const projects = all.filter((p) => !p.earlier);
   // The stack filter only earns its space once there are a handful of projects.
@@ -74,7 +78,7 @@ export function Projects({ projects: all }: { projects: Project[] }) {
 
       <div className="cards">
         {shown.map((p) => (
-          <a className="card" key={p.title} href={p.url} target="_blank" rel="noopener">
+          <a className="card" key={p.title} id={projectId(p.title)} href={p.url} target="_blank" rel="noopener">
             <div className="thumb">
               {p.image ? (
                 <img src={p.image} alt={`${p.title} screenshot`} loading="lazy" />
