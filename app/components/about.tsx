@@ -63,9 +63,9 @@ export function About() {
       const colors: Record<string, string> = {
         circle: "#e5484d",
         highlight: dark ? "rgba(250, 204, 21, .3)" : "#fde68a",
-        underline: accent,
+        underline: dark ? "#ffffff" : accent,
         box: accent,
-        bracket: accent,
+        bracket: "#e5484d",
       };
       const marks = Array.from(root.querySelectorAll<HTMLElement>("[data-mark]")).map((el) => {
         const type = el.dataset.mark as RoughAnnotationType;
