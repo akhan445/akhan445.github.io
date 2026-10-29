@@ -4,8 +4,8 @@ import { Spotlight } from "./components/spotlight";
 import { Experience } from "./components/experience";
 import { Projects } from "./components/projects";
 import { Contact } from "./components/contact";
-import { GitHubIcon, LinkedInIcon, PinIcon } from "./components/social-icons";
-import { TypedRole } from "./components/typed-role";
+import { GitHubIcon, LinkedInIcon } from "./components/social-icons";
+import { About } from "./components/about";
 
 export default function Page() {
   const projects = [...site.projects].sort((a, b) => b.date.localeCompare(a.date));
@@ -19,9 +19,9 @@ export default function Page() {
           <div className="who">
             <span className="logo big" role="img" aria-label="AK logo" />
             <h1>{site.name}</h1>
-            <TypedRole titles={site.titles} />
+            <p className="role">{site.role}</p>
             <span className="status">
-              <PinIcon />
+              <span className="here" aria-hidden="true" />
               {site.location}
             </span>
             <div className="socials">
@@ -36,12 +36,7 @@ export default function Page() {
               </a>
             </div>
           </div>
-          <div className="about">
-            <p className="tag">About</p>
-            {site.about.map((p, i) => (
-              <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
-            ))}
-          </div>
+          <About />
         </section>
 
         <section className="kstrip" aria-label="Highlights">

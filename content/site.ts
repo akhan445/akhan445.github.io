@@ -38,8 +38,6 @@ export type Project = {
 export const site = {
   name: "Abdullah Khan",
   role: "Full Stack Software Engineer",
-  // Typed out one after another under the name in the hero.
-  titles: ["Full Stack Software Engineer", "AI App Builder", "Generalist"],
   pitch:
     "I build backend services and full stack products that ship to production, from fuel and logistics platforms to enterprise identity systems.",
   location: "Toronto",
@@ -52,13 +50,23 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/abdullahskhan",
   },
 
-  // Paragraphs; <b>…</b> and links are allowed. Featured projects can be linked
-  // as #project-<title in kebab case>, e.g. #project-scope-to-ship.
-  about: [
-    "I'm a software engineer in Toronto with experience in <b>full stack and backend development</b>, <b>automation</b> and <b>AI</b>.",
-    "Full stack engineer, AI app builder and generalist. I mostly work in <b>Python, Node.js, TypeScript, React and PostgreSQL</b>, and pick up whatever else a problem needs.",
-    "Recently I built <a href=\"#project-scope-to-ship\">agent skills</a> that make coding agents plan before they write code, and an <a href=\"#project-anchor\">MCP server</a> that runs an Alexa+ routine coach.",
-  ],
+  // The About section. `subtitle` types itself out, pausing after each comma.
+  // In `about` paragraphs, [[style: text]] draws a hand-drawn mark around the text,
+  // one after another on page load. Styles: circle, highlight, underline, box.
+  // Recent builds link to their project card (#project-<title in kebab case>) and
+  // get a bracket around them as the last mark.
+  about: {
+    subtitle: "Full Stack Engineer, AI App Builder, Generalist",
+    paragraphs: [
+      "I'm a [[circle: software engineer]] in Toronto with experience in [[highlight: full stack]] and [[highlight: backend]] development, [[highlight: automation]] and [[highlight: AI]].",
+      "I mostly work in [[underline: Python]], [[underline: Node.js]], [[underline: TypeScript]], [[underline: React]] and [[underline: PostgreSQL]], and pick up whatever else a problem needs.",
+    ],
+    buildsIntro: "Some recent builds:",
+    builds: [
+      { name: "Agent Skills", href: "#project-scope-to-ship", text: "that reduce cognitive debt through flipped interaction" },
+      { name: "MCP Server", href: "#project-anchor", text: "that houses an Alexa+ productivity coach built on AWS, Bedrock and Polly" },
+    ],
+  },
 
   // The KPI strip above Experience.
   highlights: [
@@ -71,8 +79,6 @@ export const site = {
   experience: [
     {
       role: "Full Stack Software Engineer",
-  // Typed out one after another under the name in the hero.
-  titles: ["Full Stack Software Engineer", "AI App Builder", "Generalist"],
       company: "Nomad Fuel",
       start: "2025-11",
       end: "2025-12",
