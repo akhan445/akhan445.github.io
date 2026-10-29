@@ -53,9 +53,9 @@ export const site = {
 
   // Paragraphs; <b>…</b> is allowed for emphasis.
   about: [
-    "I'm a full stack engineer whose sweet spot is the backend: <b>Python and Node.js services, APIs and integrations</b> that other systems depend on. I'm just as comfortable shipping the React and TypeScript side.",
-    "Most recently at <b>Nomad Fuel</b> I built features for a fuel and logistics platform that helps truckers buy fuel and save on it. Before that I built automation at <b>KPMG</b> that cut 2–3 days from security report turnaround, shipped production features for health tech and e-commerce teams, and evaluated AI-generated code at <b>Outlier AI</b>.",
-    "I'm most interested in automation, logistics and industrial software, where good backend systems save real time and money. A dual degree in Computer Science and Management means I care about why a feature exists, not only how it's built.",
+    "I'm a software engineer in Toronto, and the backend is where I'm happiest: designing APIs, connecting services, and writing the <b>Python and Node.js</b> code that everything else depends on. I like building the React side too, but a clean data model and an endpoint that does exactly what it says is what I enjoy most.",
+    "I like <b>automating the repetitive parts</b> of a job. If something gets done by hand more than twice, I usually end up writing a script for it.",
+    "Lately I've been building with <b>AI agents</b>: a skill pack that makes coding agents plan before they write code, and an MCP server behind an Alexa voice coach. I'm interested in what it takes to make these tools reliable enough to trust with real work.",
   ],
 
   // The KPI strip above Experience.
