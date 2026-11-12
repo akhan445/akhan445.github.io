@@ -183,7 +183,8 @@ export const site = {
     },
     {
       title: "Anchor, an Alexa+ routine coach",
-      date: "2026-10-23",
+      // Built 2026-10-23; dated later so it lists second, right after giveback.
+      date: "2026-10-28",
       description:
         "Voice coach that plans your day around fixed anchors and adapts your routines. A self-hosted MCP server whose 10 tools answer in under 30 ms, with Amazon Bedrock rewriting routines and coaching in the background and Amazon Polly as the voice.",
       stack: ["Node.js", "MCP", "AWS", "Amazon Bedrock", "Amazon Polly"],
