@@ -155,6 +155,15 @@ export const site = {
 
   projects: [
     {
+      title: "giveback",
+      date: "2026-11-12",
+      description:
+        "PayPal-powered point of sale and giving platform for nonprofits, built for the PayPal AI Hackathon. Supporters pay with PayPal on the device or by QR code, an AI assistant answers cash-flow questions from the organization's own data and can prepare a sponsor invoice that only sends after a confirm click, and volume earns cashback paid out through the Payouts API.",
+      stack: ["AG Grid", "Claude Code", "Next.js", "OpenAI", "PayPal", "React", "TypeScript", "PostgreSQL", "Neon", "Vercel"],
+      url: "https://github.com/akhan445/giveback",
+      image: "/projects/giveback.webp",
+    },
+    {
       title: "Scope to Ship",
       date: "2026-10-27",
       description:
